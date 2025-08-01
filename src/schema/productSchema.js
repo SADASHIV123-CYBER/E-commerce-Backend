@@ -1,7 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const productSchema = mongoose.Schema({
-    name: {
+    productName: {
         type: String,
         trim: true,
         required: [true, 'Product name is required'],
@@ -35,7 +35,7 @@ const productSchema = mongoose.Schema({
         default: 0
     },
 
-    image: {
+    productImage: {
         type: String,
     }
 
