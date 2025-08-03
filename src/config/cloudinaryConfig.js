@@ -19,6 +19,10 @@ console.log('Cloudinary Config:', {
   CLOUDINARY_API_SECRET
 });
 
+
+
+
+
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
