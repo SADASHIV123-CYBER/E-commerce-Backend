@@ -57,7 +57,7 @@ async function modifyCart(userId, productId, shouldAdd = true) {
     })
 
     if(!foundProduct && shouldAdd) {
-        cart.items.push({product: productId, quantity})
+        cart.items.push({product: productId, quantity: 1})
     }
 
     if(!foundProduct && !shouldAdd) {
