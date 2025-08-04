@@ -16,7 +16,7 @@ async function getCart(userId) {
 
 async function modifyCart(userId, productId, shouldAdd = true) {
     const quantityValue = shouldAdd ? 1 : -1;
-    const cart = await getCartById(userId);
+    const cart = await getCart(userId);
     const product = await getProductById(productId)
 
     if(!product) {
@@ -28,6 +28,9 @@ async function modifyCart(userId, productId, shouldAdd = true) {
     }
 
     let foundProduct = false;
+
+    console.log('cart:----->',cart);
+    
 
     cart.items.forEach((item) => {
         if(item.product.equals(productId)) {

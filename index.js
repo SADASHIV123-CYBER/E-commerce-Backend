@@ -11,6 +11,7 @@ const fs = require('fs/promises')
 
 const cookieParser = require('cookie-parser');
 const uploader = require('./src/middlewares/multerMiddleware');
+const cartRouter = require('./src/routes/cartRouter');
 
 const app = express();
 
@@ -22,7 +23,8 @@ app.use(express.text())
 
 app.use('/users', userRouter);
 app.use('/auth', authRouter);
-app.use('/products', productRouter)
+app.use('/products', productRouter);
+app.use('/carts', cartRouter)
 
 app.get('/ping', (req, res) => {
     return res.json({
